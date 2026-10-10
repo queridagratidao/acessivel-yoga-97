@@ -13,6 +13,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2827962227501729');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2827962227501729&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -198,6 +217,16 @@ document.querySelectorAll('.faq-q').forEach(function(q){
     var a=q.nextElementSibling, open=q.classList.contains('open');
     document.querySelectorAll('.faq-q').forEach(function(o){o.classList.remove('open');o.nextElementSibling.style.maxHeight=null;});
     if(!open){q.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
+  });
+});
+</script>
+
+<script>
+document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(function(link){
+  link.addEventListener('click', function(){
+    if (typeof fbq === 'function') {
+      fbq('track', 'InitiateCheckout');
+    }
   });
 });
 </script>
